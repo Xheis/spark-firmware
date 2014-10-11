@@ -40,14 +40,14 @@
 
 using namespace spark;
 
+extern uint8_t LED_RGB_BRIGHTNESS;
 volatile uint32_t TimingFlashUpdateTimeout;
 
-SparkProtocol spark_protocol;
 
+#ifndef SPARK_NO_CLOUD
+SparkProtocol spark_protocol;
 sock_handle_t sparkSocket = SOCKET_INVALID;
 
-
-extern uint8_t LED_RGB_BRIGHTNESS;
 
 // LED_Signaling_Override
 volatile uint8_t LED_Spark_Signal;
@@ -75,27 +75,23 @@ struct User_Func_Lookup_Table_t
 	bool userFuncSchedule;
 } User_Func_Lookup_Table[USER_FUNC_MAX_COUNT];
 
-/*
-static unsigned char uitoa(unsigned int cNum, char *cString);
-static unsigned int atoui(char *cString);
-static uint8_t atoc(char data);
-*/
-
-/*
-static uint16_t atoshort(char b1, char b2);
-static unsigned char ascii_to_char(char b1, char b2);
-
-static void str_cpy(char dest[], char src[]);
-static int str_cmp(char str1[], char str2[]);
-static int str_len(char str[]);
-static void sub_str(char dest[], char src[], int offset, int len);
-*/
+#endif
 
 SystemClass System;
 RGBClass RGB;
 SparkClass Spark;
 
 System_Mode_TypeDef SystemClass::_mode = AUTOMATIC;
+
+inline void setSparkCloudConnect(bool connect)
+{
+#ifndef SPARK_NO_CLOUD    
+    SPARK_CLOUD_CONNECT = connect;
+#else
+    SPARK_CLOUD_CONNECT = false;
+#endif    
+}
+
 
 SystemClass::SystemClass()
 {
@@ -107,18 +103,18 @@ SystemClass::SystemClass(System_Mode_TypeDef mode)
   {
     case AUTOMATIC:
       _mode = AUTOMATIC;
-      SPARK_CLOUD_CONNECT = 1;
+      setSparkCloudConnect(true);
       break;
 
     case SEMI_AUTOMATIC:
       _mode = SEMI_AUTOMATIC;
-      SPARK_CLOUD_CONNECT = 0;
+      setSparkCloudConnect(false);
       SPARK_WLAN_SLEEP = 1;
       break;
 
     case MANUAL:
       _mode = MANUAL;
-      SPARK_CLOUD_CONNECT = 0;
+      setSparkCloudConnect(false);
       SPARK_WLAN_SLEEP = 1;
       break;
   }
@@ -231,6 +227,7 @@ void RGBClass::brightness(uint8_t brightness, bool update)
 
 void SparkClass::variable(const char *varKey, void *userVar, Spark_Data_TypeDef userVarType)
 {
+#ifndef SPARK_NO_CLOUD
   if (NULL != userVar && NULL != varKey)
   {
     if (User_Var_Count == USER_VAR_MAX_COUNT)
@@ -251,10 +248,12 @@ void SparkClass::variable(const char *varKey, void *userVar, Spark_Data_TypeDef 
     memcpy(User_Var_Lookup_Table[User_Var_Count].userVarKey, varKey, USER_VAR_KEY_LENGTH);
     User_Var_Count++;
   }
+#endif  
 }
 
 void SparkClass::function(const char *funcKey, int (*pFunc)(String paramString))
 {
+#ifndef SPARK_NO_CLOUD    
 	int i = 0;
 	if(NULL != pFunc && NULL != funcKey)
 	{
@@ -276,26 +275,43 @@ void SparkClass::function(const char *funcKey, int (*pFunc)(String paramString))
 		User_Func_Lookup_Table[User_Func_Count].userFuncSchedule = false;
 		User_Func_Count++;
 	}
+#endif
 }
 
 bool SparkClass::publish(const char *eventName)
 {
-  return spark_protocol.send_event(eventName, NULL, 60, EventType::PUBLIC);
+#ifndef SPARK_NO_CLOUD    
+    return spark_protocol.send_event(eventName, NULL, 60, EventType::PUBLIC);
+#else
+    return false;
+#endif    
 }
 
 bool SparkClass::publish(const char *eventName, const char *eventData)
 {
+#ifndef SPARK_NO_CLOUD    
   return spark_protocol.send_event(eventName, eventData, 60, EventType::PUBLIC);
+#else
+  return false;
+#endif  
 }
 
 bool SparkClass::publish(const char *eventName, const char *eventData, int ttl)
 {
+#ifndef SPARK_NO_CLOUD    
   return spark_protocol.send_event(eventName, eventData, ttl, EventType::PUBLIC);
+#else
+  return false;
+#endif  
 }
 
 bool SparkClass::publish(const char *eventName, const char *eventData, int ttl, Spark_Event_TypeDef eventType)
 {
+#ifndef SPARK_NO_CLOUD    
   return spark_protocol.send_event(eventName, eventData, ttl, (eventType ? EventType::PRIVATE : EventType::PUBLIC));
+#else
+  return false;
+#endif  
 }
 
 bool SparkClass::publish(String eventName)
@@ -320,37 +336,51 @@ bool SparkClass::publish(String eventName, String eventData, int ttl, Spark_Even
 
 void SparkClass::unsubscribe()
 {
+#ifndef SPARK_NO_CLOUD
     spark_protocol.remove_event_handlers(NULL);
+#endif
 }
 
 bool SparkClass::subscribe(const char *eventName, EventHandler handler)
 {
-  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::FIREHOSE, NULL);
+#ifndef SPARK_NO_CLOUD
+  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::FIREHOSE, NULL);  
   if (success && connected())
   {
     success = spark_protocol.send_subscription(eventName, SubscriptionScope::FIREHOSE);
   }
   return success;
+#else
+    return false;
+#endif
 }
 
 bool SparkClass::subscribe(const char *eventName, EventHandler handler, Spark_Subscription_Scope_TypeDef scope)
 {
-  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, NULL);
-  if (success && connected())
+#ifndef SPARK_NO_CLOUD    
+    bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, NULL);
+    if (success && connected())
   {
     success = spark_protocol.send_subscription(eventName, SubscriptionScope::MY_DEVICES);
   }
   return success;
+#else
+    return false;
+#endif    
 }
 
 bool SparkClass::subscribe(const char *eventName, EventHandler handler, const char *deviceID)
 {
-  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, deviceID);
+#ifndef SPARK_NO_CLOUD    
+    bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, deviceID);
   if (success)
   {
     success = spark_protocol.send_subscription(eventName, deviceID);
   }
   return success;
+#else
+    return false;
+#endif    
 }
 
 bool SparkClass::subscribe(String eventName, EventHandler handler)
@@ -370,7 +400,9 @@ bool SparkClass::subscribe(String eventName, EventHandler handler, String device
 
 void SparkClass::syncTime(void)
 {
+#ifndef SPARK_NO_CLOUD    
   spark_protocol.send_time_request();
+#endif    
 }
 
 void SparkClass::sleep(Spark_Sleep_TypeDef sleepMode, long seconds)
@@ -407,9 +439,10 @@ void SparkClass::sleep(uint16_t wakeUpPin, uint16_t edgeTriggerMode, long second
     sleep(wakeUpPin, edgeTriggerMode);
 }
 
-inline uint8_t isSocketClosed()
+#ifndef SPARK_NO_CLOUD
+inline bool isSocketClosed()
 {
-  uint8_t closed  = socket_active_status(sparkSocket)==SOCKET_STATUS_INACTIVE;
+    bool closed  = socket_active_status(sparkSocket)==SOCKET_STATUS_INACTIVE;
 
   if(closed)
   {
@@ -426,20 +459,20 @@ inline uint8_t isSocketClosed()
     }
   return closed;
 }
+#endif
 
 bool SparkClass::connected(void)
 {
-	if(SPARK_CLOUD_SOCKETED && SPARK_CLOUD_CONNECTED)
-		return true;
-	else
-		return false;
+    return (SPARK_CLOUD_SOCKETED && SPARK_CLOUD_CONNECTED);
 }
 
 void SparkClass::connect(void)
 {
 	//Schedule Spark's cloud connection and handshake
         WiFi.connect();
+#ifndef SPARK_NO_CLOUD    
 	SPARK_CLOUD_CONNECT = 1;
+#endif    
 }
 
 void SparkClass::disconnect(void)
@@ -450,7 +483,9 @@ void SparkClass::disconnect(void)
 
 void SparkClass::process(void)
 {
+#ifndef SPARK_NO_CLOUD    
     if (SPARK_CLOUD_SOCKETED && !Spark_Communication_Loop())
+#endif        
     {
         SPARK_FLASH_UPDATE = 0;
         SPARK_CLOUD_CONNECTED = 0;
@@ -486,6 +521,8 @@ String SparkClass::deviceID(void)
     return bytes2hex(id, len);
 }    
  
+
+#ifndef SPARK_NO_CLOUD    
 
 // Returns number of bytes sent or -1 if an error occurred
 int Spark_Send(const unsigned char *buf, uint32_t buflen)
@@ -615,9 +652,11 @@ SparkReturnType::Enum wrapVarTypeInEnum(const char *varKey)
       return SparkReturnType::INT;
   }
 }
+#endif
 
 void Spark_Protocol_Init(void)
 {
+#ifndef SPARK_NO_CLOUD    
   if (!spark_protocol.is_initialized())
   {
     SparkCallbacks callbacks;
@@ -658,8 +697,10 @@ void Spark_Protocol_Init(void)
     HAL_device_ID(id, id_length);
     spark_protocol.init((const char*)id, keys, callbacks, descriptor);
   }
+#endif  
 }
 
+#ifndef SPARK_NO_CLOUD
 int Spark_Handshake(void)
 {
   spark_protocol.reset_updating();
@@ -683,6 +724,7 @@ bool Spark_Communication_Loop(void)
 {
   return spark_protocol.event_loop();
 }
+
 
 void Multicast_Presence_Announcement(void)
 {
@@ -937,6 +979,21 @@ int userFuncSchedule(const char *funcKey, const char *paramString)
 	return -1;
 }
 
+bool Spark_IsSparkSocket(sock_handle_t socket) { return socket==sparkSocket; }
+
+
+#else
+
+int Spark_Connect(void) { return 0; }
+int Spark_Disconnect(void) { return 0; }
+int Spark_Handshake(void) { return 0; }
+bool isSocketClosed() { return true; }
+bool Spark_IsSparkSocket(sock_handle_t socket) { return false; }
+void Multicast_Presence_Announcement(void) {}
+
+#endif
+
+
 void serialReadLine(Stream *serialObj, char *dst, int max_len, system_tick_t timeout)
 {
     char c = 0, i = 0;
@@ -983,154 +1040,3 @@ void serialReadLine(Stream *serialObj, char *dst, int max_len, system_tick_t tim
         }
     }
 }
-
-// Convert unsigned integer to ASCII in decimal base
-/*
-static unsigned char uitoa(unsigned int cNum, char *cString)
-{
-    char* ptr;
-    unsigned int uTemp = cNum;
-    unsigned char length;
-
-    // value 0 is a special case
-    if (cNum == 0)
-    {
-        length = 1;
-        *cString = '0';
-
-        return length;
-    }
-
-    // Find out the length of the number, in decimal base
-    length = 0;
-    while (uTemp > 0)
-    {
-        uTemp /= 10;
-        length++;
-    }
-
-    // Do the actual formatting, right to left
-    uTemp = cNum;
-    ptr = cString + length;
-    while (uTemp > 0)
-    {
-        --ptr;
-        *ptr = digits[uTemp % 10];
-        uTemp /= 10;
-    }
-
-    return length;
-}
-
-// Convert ASCII to unsigned integer
-static unsigned int atoui(char *cString)
-{
-	unsigned int cNum = 0;
-	if (cString)
-	{
-		while (*cString && *cString <= '9' && *cString >= '0')
-		{
-			cNum = (cNum * 10) + (*cString - '0');
-			cString++;
-		}
-	}
-	return cNum;
-}
-
-//Convert nibble to hexdecimal from ASCII
-static uint8_t atoc(char data)
-{
-	unsigned char ucRes = 0;
-
-	if ((data >= 0x30) && (data <= 0x39))
-	{
-		ucRes = data - 0x30;
-	}
-	else
-	{
-		if (data == 'a')
-		{
-			ucRes = 0x0a;;
-		}
-		else if (data == 'b')
-		{
-			ucRes = 0x0b;
-		}
-		else if (data == 'c')
-		{
-			ucRes = 0x0c;
-		}
-		else if (data == 'd')
-		{
-			ucRes = 0x0d;
-		}
-		else if (data == 'e')
-		{
-			ucRes = 0x0e;
-		}
-		else if (data == 'f')
-		{
-			ucRes = 0x0f;
-		}
-	}
-	return ucRes;
-}
-*/
-
-/*
-// Convert 2 nibbles in ASCII into a short number
-static uint16_t atoshort(char b1, char b2)
-{
-	uint16_t usRes;
-	usRes = (atoc(b1)) * 16 | atoc(b2);
-	return usRes;
-}
-
-// Convert 2 bytes in ASCII into one character
-static unsigned char ascii_to_char(char b1, char b2)
-{
-	unsigned char ucRes;
-
-	ucRes = (atoc(b1)) << 4 | (atoc(b2));
-
-	return ucRes;
-}
-
-// Various String Functions
-static void str_cpy(char dest[], char src[])
-{
-	int i = 0;
-	for(i = 0; src[i] != '\0'; i++)
-		dest[i] = src[i];
-	dest[i] = '\0';
-}
-
-static int str_cmp(char str1[], char str2[])
-{
-	int i = 0;
-	while(1)
-	{
-		if(str1[i] != str2[i])
-			return str1[i] - str2[i];
-		if(str1[i] == '\0' || str2[i] == '\0')
-			return 0;
-		i++;
-	}
-}
-
-static int str_len(char str[])
-{
-	int i;
-	for(i = 0; str[i] != '\0'; i++);
-	return i;
-}
-
-static void sub_str(char dest[], char src[], int offset, int len)
-{
-	int i;
-	for(i = 0; i < len && src[offset + i] != '\0'; i++)
-		dest[i] = src[i + offset];
-	dest[i] = '\0';
-}
-
-*/
