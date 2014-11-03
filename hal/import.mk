@@ -5,6 +5,9 @@ HAL_LIB_DEP = $(HAL_LIB_DIR)/libhal.a
 
 include $(call rwildcard,$(HAL_MODULE_PATH)/,include.mk)
 
+# Linker flags
+LDFLAGS += -Wl,-Map,$(TARGET_BASE).map
+
 
 ifeq "$(ARCH)" "gcc"
 # additional libraries required by gcc build
