@@ -249,6 +249,10 @@
             <df name="ScrollBox">
               <in>ScrollBox.h</in>
             </df>
+            <df name="ValvesController">
+              <in>ValvesController.cpp</in>
+              <in>ValvesController.h</in>
+            </df>
             <in>application.cpp</in>
           </df>
           <df name="tinker">
@@ -1408,6 +1412,16 @@
             flavor2="0">
       </item>
       <item path="main/applications/brewpi/ScrollBox/ScrollBox.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main/applications/brewpi/ValvesController/ValvesController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="main/applications/brewpi/ValvesController/ValvesController.h"
             ex="false"
             tool="3"
             flavor2="0">
@@ -3170,6 +3184,16 @@
             flavor2="0">
       </item>
       <item path="main/applications/brewpi/ScrollBox/ScrollBox.h"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="main/applications/brewpi/ValvesController/ValvesController.cpp"
+            ex="false"
+            tool="1"
+            flavor2="0">
+      </item>
+      <item path="main/applications/brewpi/ValvesController/ValvesController.h"
             ex="false"
             tool="3"
             flavor2="0">

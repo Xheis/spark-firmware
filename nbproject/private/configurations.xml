@@ -128,6 +128,8 @@
                   </df>
                   <df name="ScrollBox">
                   </df>
+                  <df name="ValvesController">
+                  </df>
                 </df>
               </df>
               <df name="src">
@@ -441,6 +443,10 @@
             <df name="ScrollBox">
               <in>ScrollBox.cpp</in>
               <in>ScrollBox.h</in>
+            </df>
+            <df name="ValvesController">
+              <in>ValvesController.cpp</in>
+              <in>ValvesController.h</in>
             </df>
             <in>application.cpp</in>
           </df>
@@ -1140,6 +1146,8 @@
                   </df>
                   <df name="ScrollBox">
                   </df>
+                  <df name="ValvesController">
+                  </df>
                 </df>
               </df>
               <df name="src">
@@ -1256,6 +1264,8 @@
             <df name="OneWireSwitch">
             </df>
             <df name="ScrollBox">
+            </df>
+            <df name="ValvesController">
             </df>
           </df>
           <df name="tinker">
@@ -1411,6 +1421,8 @@
         <gdb_interceptlist>
           <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
         </gdb_interceptlist>
+        <gdb_signals>
+        </gdb_signals>
         <gdb_options>
           <DebugOptions>
             <option name="gdb_init_file" value="C:\repos\gdbdebug.txt"/>
