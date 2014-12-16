@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <code-assistance-data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <code-model-enabled>true</code-model-enabled>
+    </code-assistance-data>
+    <data xmlns="http://www.netbeans.org/ns/make-project-private/1">
+        <activeConfTypeElem>0</activeConfTypeElem>
+        <activeConfIndexElem>0</activeConfIndexElem>
+    </data>
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/repos/spark-firmware/wiring/src/spark_wiring_i2c.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/Adafruit_ILI9341/Adafruit_ILI9341.h</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/BrewPiTouch/BrewPiTouch.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/application.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/Adafruit_ILI9341/Adafruit_ILI9341.cpp</file>
+            <file>file:/C:/repos/spark-firmware/wiring/src/spark_wiring.cpp</file>
+            <file>file:/C:/repos/spark-firmware/hal/src/core-v1/timer_hal.c</file>
+            <file>file:/C:/repos/spark-firmware/.gitignore</file>
+            <file>file:/C:/repos/spark-firmware/main/tests/tests.mk</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/Adafruit_mfGFX/Adafruit_mfGFX.h</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/Adafruit_mfGFX/fonts.h</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/Adafruit_mfGFX/Adafruit_mfGFX.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/Adafruit_mfGFX/fonts.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/LowPassFilter/LowPassFilter.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/src/main.cpp</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/LowPassFilter/LowPassFilter.h</file>
+            <file>file:/C:/repos/spark-firmware/platform/MCU/STM32F1xx/SPARK_Firmware_Driver/src/hw_config.c</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/BrewPiTouch/BrewPiTouch.h</file>
+            <file>file:/C:/repos/spark-firmware/hal/src/core-v1/i2c_hal.c</file>
+            <file>file:/C:/repos/spark-firmware/hal/inc/core_hal.h</file>
+            <file>file:/C:/repos/spark-firmware/main/applications/brewpi/DS2482/DS2482.cpp</file>
+        </group>
+    </open-files>
+    <preferences xmlns="http://www.netbeans.org/ns/auxiliary-configuration-preferences/1">
+        <module name="org-netbeans-modules-cnd-discovery">
+            <property name="make-log-file" value="C:\repos\spark-firmware\build\target\main\prod-0\applications\brewpi\brewpi.elf"/>
+            <property name="rootFolder" value="C:\repos\spark-firmware"/>
+            <property name="folder" value="C:\repos\spark-firmware"/>
+        </module>
+    </preferences>
+</project-private>

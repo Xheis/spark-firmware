@@ -1,0 +1,1493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="appnotes">
+      </df>
+      <df name="bootloader">
+        <df name="inc">
+          <in>dfu_mal.h</in>
+          <in>flash_if.h</in>
+          <in>main.h</in>
+          <in>spi_if.h</in>
+          <in>stm32_it.h</in>
+          <in>usb_conf.h</in>
+          <in>usb_desc.h</in>
+          <in>usb_istr.h</in>
+          <in>usb_prop.h</in>
+        </df>
+        <df name="src">
+          <df name="core-v1">
+            <in>dfu_hal.c</in>
+            <in>dfu_mal.c</in>
+            <in>dfu_mal.h</in>
+            <in>flash_if.c</in>
+            <in>flash_if.h</in>
+            <in>spi_if.c</in>
+            <in>spi_if.h</in>
+            <in>stm32_it.c</in>
+            <in>stm32_it.h</in>
+            <in>usb_conf.h</in>
+            <in>usb_desc.c</in>
+            <in>usb_desc.h</in>
+            <in>usb_istr.c</in>
+            <in>usb_istr.h</in>
+            <in>usb_prop.c</in>
+            <in>usb_prop.h</in>
+          </df>
+          <df name="core-v2">
+            <in>dfu_hal.c</in>
+            <in>stm32_it.c</in>
+            <in>stm32_it.h</in>
+            <in>usb_bsp.c</in>
+            <in>usb_conf.h</in>
+            <in>usbd_conf.h</in>
+            <in>usbd_desc.c</in>
+            <in>usbd_desc.h</in>
+            <in>usbd_usr.c</in>
+          </df>
+          <in>dfu_mal.c</in>
+          <in>flash_if.c</in>
+          <in>main.c</in>
+          <in>spi_if.c</in>
+          <in>stm32_it.c</in>
+          <in>usb_desc.c</in>
+          <in>usb_istr.c</in>
+          <in>usb_prop.c</in>
+        </df>
+        <df name="tools">
+        </df>
+      </df>
+      <df name="build">
+        <df name="arm">
+          <df name="linker">
+          </df>
+          <df name="startup">
+            <in>spark_init.S</in>
+            <in>startup_stm32f10x_hd.S</in>
+            <in>startup_stm32f10x_md.S</in>
+            <in>startup_stm32f2xx.s</in>
+          </df>
+        </df>
+        <df name="target">
+          <df name="bootloader">
+            <df name="prod-0">
+              <df name="src">
+                <df name="core-v1">
+                </df>
+              </df>
+              <df name="startup">
+              </df>
+            </df>
+          </df>
+          <df name="communication">
+            <df name="arm">
+              <df name="lib">
+                <df name="tropicssl">
+                  <df name="library">
+                  </df>
+                </df>
+              </df>
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="hal">
+            <df name="prod-0">
+              <df name="src">
+                <df name="core-v1">
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="main">
+            <df name="prod-0">
+              <df name="applications">
+                <df name="brewpi">
+                  <df name="Adafruit_ILI9341">
+                  </df>
+                  <df name="Adafruit_mfGFX">
+                  </df>
+                  <df name="BrewPiTouch">
+                  </df>
+                  <df name="Display">
+                  </df>
+                  <df name="DS2408">
+                  </df>
+                  <df name="DS2413">
+                  </df>
+                  <df name="DS2482">
+                  </df>
+                  <df name="LowPassFilter">
+                  </df>
+                  <df name="OneWire">
+                  </df>
+                  <df name="OneWireSlave">
+                  </df>
+                  <df name="OneWireSwitch">
+                  </df>
+                  <df name="ScrollBox">
+                  </df>
+                </df>
+              </df>
+              <df name="src">
+              </df>
+              <df name="startup">
+              </df>
+            </df>
+          </df>
+          <df name="platform">
+            <df name="prod-0">
+              <df name="MCU">
+                <df name="STM32F1xx">
+                  <df name="SPARK_Firmware_Driver">
+                    <df name="src">
+                    </df>
+                  </df>
+                  <df name="STM32_StdPeriph_Driver">
+                    <df name="src">
+                    </df>
+                  </df>
+                  <df name="STM32_USB_Device_Driver">
+                    <df name="src">
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="NET">
+                <df name="CC3000">
+                  <df name="CC3000_Host_Driver">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="services">
+            <df name="arm">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="wiring">
+            <df name="arm">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="ci">
+        <df name="firmware">
+        </df>
+        <df name="unitth">
+        </df>
+      </df>
+      <df name="communication">
+        <df name="lib">
+          <df name="tropicssl">
+            <df name="include">
+              <df name="tropicssl">
+                <in>aes.h</in>
+                <in>bignum.h</in>
+                <in>bn_mul.h</in>
+                <in>config.h</in>
+                <in>padlock.h</in>
+                <in>rsa.h</in>
+                <in>sha1.h</in>
+              </df>
+            </df>
+            <df name="library">
+              <in>aes.c</in>
+              <in>bignum.c</in>
+              <in>padlock.c</in>
+              <in>rsa.c</in>
+              <in>sha1.c</in>
+            </df>
+          </df>
+        </df>
+        <df name="src">
+          <in>coap.cpp</in>
+          <in>coap.h</in>
+          <in>events.cpp</in>
+          <in>events.h</in>
+          <in>functions.c</in>
+          <in>functions.h</in>
+          <in>handshake.cpp</in>
+          <in>handshake.h</in>
+          <in>spark_descriptor.h</in>
+          <in>spark_protocol.cpp</in>
+          <in>spark_protocol.h</in>
+        </df>
+        <df name="tests">
+          <df name="UnitTest++">
+            <df name="src">
+              <df name="Posix">
+                <in>SignalTranslator.cpp</in>
+                <in>SignalTranslator.h</in>
+                <in>TimeHelpers.cpp</in>
+                <in>TimeHelpers.h</in>
+              </df>
+              <df name="Win32">
+                <in>TimeHelpers.cpp</in>
+                <in>TimeHelpers.h</in>
+              </df>
+              <in>AssertException.cpp</in>
+              <in>AssertException.h</in>
+              <in>CheckMacros.h</in>
+              <in>Checks.cpp</in>
+              <in>Checks.h</in>
+              <in>Config.h</in>
+              <in>CurrentTest.cpp</in>
+              <in>CurrentTest.h</in>
+              <in>DeferredTestReporter.cpp</in>
+              <in>DeferredTestReporter.h</in>
+              <in>DeferredTestResult.cpp</in>
+              <in>DeferredTestResult.h</in>
+              <in>ExecuteTest.h</in>
+              <in>MemoryOutStream.cpp</in>
+              <in>MemoryOutStream.h</in>
+              <in>ReportAssert.cpp</in>
+              <in>ReportAssert.h</in>
+              <in>Test.cpp</in>
+              <in>Test.h</in>
+              <in>TestDetails.cpp</in>
+              <in>TestDetails.h</in>
+              <in>TestList.cpp</in>
+              <in>TestList.h</in>
+              <in>TestMacros.h</in>
+              <in>TestReporter.cpp</in>
+              <in>TestReporter.h</in>
+              <in>TestReporterStdout.cpp</in>
+              <in>TestReporterStdout.h</in>
+              <in>TestResults.cpp</in>
+              <in>TestResults.h</in>
+              <in>TestRunner.cpp</in>
+              <in>TestRunner.h</in>
+              <in>TestSuite.h</in>
+              <in>TimeConstraint.cpp</in>
+              <in>TimeConstraint.h</in>
+              <in>TimeHelpers.h</in>
+              <in>UnitTest++.h</in>
+              <in>XmlTestReporter.cpp</in>
+              <in>XmlTestReporter.h</in>
+            </df>
+          </df>
+          <in>ConstructorFixture.cpp</in>
+          <in>ConstructorFixture.h</in>
+          <in>Main.cpp</in>
+          <in>TestAES.cpp</in>
+          <in>TestCoAP.cpp</in>
+          <in>TestDescriptor.cpp</in>
+          <in>TestEvents.cpp</in>
+          <in>TestHandshake.cpp</in>
+          <in>TestQueue.cpp</in>
+          <in>TestSparkProtocol.cpp</in>
+          <in>TestStateMachine.cpp</in>
+          <in>TestUserFunctions.cpp</in>
+        </df>
+      </df>
+      <df name="hal">
+        <df name="inc">
+          <in>adc_hal.h</in>
+          <in>core_hal.h</in>
+          <in>core_subsys_hal.h</in>
+          <in>delay_hal.h</in>
+          <in>deviceid_hal.h</in>
+          <in>dfu_hal.h</in>
+          <in>eeprom_hal.h</in>
+          <in>gpio_hal.h</in>
+          <in>i2c_hal.h</in>
+          <in>inet_hal.h</in>
+          <in>interrupts_hal.h</in>
+          <in>memory_hal.h</in>
+          <in>ota_flash_hal.h</in>
+          <in>pinmap_hal.h</in>
+          <in>pwm_hal.h</in>
+          <in>rtc_hal.h</in>
+          <in>servo_hal.h</in>
+          <in>socket_hal.h</in>
+          <in>spi_hal.h</in>
+          <in>syshealth_hal.h</in>
+          <in>timer_hal.h</in>
+          <in>tone_hal.h</in>
+          <in>usart_hal.h</in>
+          <in>usb_hal.h</in>
+          <in>watchdog_hal.h</in>
+          <in>wlan_hal.h</in>
+        </df>
+        <df name="shared">
+          <in>system_tick_hal.h</in>
+        </df>
+        <df name="src">
+          <df name="core-v1">
+            <in>adc_hal.c</in>
+            <in>core_hal.c</in>
+            <in>core_subsys_hal.c</in>
+            <in>delay_hal.c</in>
+            <in>deviceid_hal.cpp</in>
+            <in>eeprom_hal.c</in>
+            <in>gpio_hal.c</in>
+            <in>i2c_hal.c</in>
+            <in>inet_hal.c</in>
+            <in>interrupts_hal.c</in>
+            <in>memory_hal.cpp</in>
+            <in>newlib_stubs.cpp</in>
+            <in>ota_flash_hal.c</in>
+            <in>pinmap_hal.c</in>
+            <in>pinmap_impl.h</in>
+            <in>platform_headers.h</in>
+            <in>pwm_hal.c</in>
+            <in>rtc_hal.c</in>
+            <in>servo_hal.c</in>
+            <in>socket_hal.c</in>
+            <in>spi_hal.c</in>
+            <in>timer_hal.c</in>
+            <in>tone_hal.c</in>
+            <in>usart_hal.c</in>
+            <in>usb_hal.c</in>
+            <in>wlan_hal.c</in>
+          </df>
+          <df name="gcc">
+            <in>boost_asio.cpp</in>
+            <in>core_hal.cpp</in>
+            <in>core_msg.h</in>
+            <in>core_subsys_hal.c</in>
+            <in>delay_hal.c</in>
+            <in>delay_hal.cpp</in>
+            <in>deviceid_hal.cpp</in>
+            <in>inet_hal.cpp</in>
+            <in>ota_flash_hal.cpp</in>
+            <in>pinger.cpp</in>
+            <in>platform_headers.h</in>
+            <in>socket_hal.cpp</in>
+            <in>timer_hal.cpp</in>
+            <in>usart_hal.cpp</in>
+            <in>wlan_hal.c</in>
+          </df>
+          <df name="template">
+            <in>adc_hal.c</in>
+            <in>core_hal.c</in>
+            <in>core_subsys_hal.c</in>
+            <in>delay_hal.c</in>
+            <in>deviceid_hal.cpp</in>
+            <in>eeprom_hal.c</in>
+            <in>gpio_hal.c</in>
+            <in>i2c_hal.c</in>
+            <in>inet_hal.c</in>
+            <in>interrupts_hal.c</in>
+            <in>memory_hal.cpp</in>
+            <in>ota_flash_hal.c</in>
+            <in>pinmap_hal.c</in>
+            <in>platform_headers.h</in>
+            <in>pwm_hal.c</in>
+            <in>rgbled.cpp</in>
+            <in>rtc_hal.c</in>
+            <in>servo_hal.c</in>
+            <in>socket_hal.c</in>
+            <in>spi_hal.c</in>
+            <in>timer_hal.c</in>
+            <in>tone_hal.c</in>
+            <in>usart_hal.c</in>
+            <in>usb_hal.c</in>
+            <in>wlan_hal.c</in>
+          </df>
+        </df>
+      </df>
+      <df name="main">
+        <df name="applications">
+          <df name="brewpi">
+            <df name="Adafruit_ILI9341">
+              <in>Adafruit_ILI9341.cpp</in>
+              <in>Adafruit_ILI9341.h</in>
+            </df>
+            <df name="Adafruit_mfGFX">
+              <in>Adafruit_mfGFX.cpp</in>
+              <in>Adafruit_mfGFX.h</in>
+              <in>fonts.cpp</in>
+              <in>fonts.h</in>
+            </df>
+            <df name="BrewPiTouch">
+              <in>BrewPiTouch.cpp</in>
+              <in>BrewPiTouch.h</in>
+            </df>
+            <df name="Display">
+              <in>Display.cpp</in>
+              <in>Display.h</in>
+            </df>
+            <df name="DS2408">
+              <in>DS2408.cpp</in>
+              <in>DS2408.h</in>
+            </df>
+            <df name="DS2413">
+              <in>DS2413.cpp</in>
+              <in>DS2413.h</in>
+            </df>
+            <df name="DS2482">
+              <in>DS2482.cpp</in>
+              <in>DS2482.h</in>
+            </df>
+            <df name="LowPassFilter">
+              <in>LowPassFilter.cpp</in>
+              <in>LowPassFilter.h</in>
+            </df>
+            <df name="OneWire">
+              <in>OneWire.cpp</in>
+              <in>OneWire.h</in>
+            </df>
+            <df name="OneWireSwitch">
+              <in>OneWireSwitch.cpp</in>
+              <in>OneWireSwitch.h</in>
+            </df>
+            <df name="ScrollBox">
+              <in>ScrollBox.cpp</in>
+              <in>ScrollBox.h</in>
+            </df>
+            <in>application.cpp</in>
+          </df>
+          <df name="tinker">
+            <in>application.cpp</in>
+          </df>
+        </df>
+        <df name="inc">
+          <in>application.h</in>
+        </df>
+        <df name="libraries">
+          <df name="Serial2">
+            <in>Serial2.h</in>
+          </df>
+          <df name="Ymodem">
+            <in>Ymodem.h</in>
+          </df>
+        </df>
+        <df name="src">
+          <in>application.cpp</in>
+          <in>main.cpp</in>
+          <in>newlib_stubs.cpp</in>
+        </df>
+        <df name="tests">
+          <df name="core-v1">
+            <df name="testapp1">
+              <in>LED.cpp</in>
+              <in>application.cpp</in>
+              <in>cloud.cpp</in>
+              <in>eeprom.cpp</in>
+              <in>gpio.cpp</in>
+              <in>pwm.cpp</in>
+              <in>random.cpp</in>
+              <in>servo.cpp</in>
+              <in>time.cpp</in>
+              <in>tone.cpp</in>
+              <in>wlan.cpp</in>
+            </df>
+          </df>
+          <df name="core-v1-fixture1">
+            <df name="testapp2">
+              <in>adc.cpp</in>
+              <in>application.cpp</in>
+              <in>serial.cpp</in>
+              <in>spi.cpp</in>
+            </df>
+          </df>
+          <df name="libraries">
+            <df name="unit-test">
+              <in>FakeStream.cpp</in>
+              <in>FakeStream.h</in>
+              <in>FakeStreamBuffer.cpp</in>
+              <in>FakeStreamBuffer.h</in>
+              <in>SparkParty.cpp</in>
+              <in>flashee-eeprom-impl.h</in>
+              <in>flashee-eeprom.cpp</in>
+              <in>flashee-eeprom.h</in>
+              <in>unit-test.cpp</in>
+              <in>unit-test.h</in>
+            </df>
+          </df>
+          <df name="reflection">
+          </df>
+          <df name="unit">
+            <in>catch.cpp</in>
+            <in>catch.hpp</in>
+            <in>character.cpp</in>
+            <in>ipaddress.cpp</in>
+            <in>main.cpp</in>
+            <in>random.cpp</in>
+            <in>rgbled.cpp</in>
+            <in>string.cpp</in>
+          </df>
+        </df>
+      </df>
+      <df name="platform">
+        <df name="MCU">
+          <df name="STM32F1xx">
+            <df name="CMSIS">
+              <df name="Device">
+                <df name="ST">
+                  <df name="Include">
+                    <in>stm32f10x.h</in>
+                    <in>system_stm32f10x.h</in>
+                  </df>
+                </df>
+              </df>
+              <df name="Include">
+                <in>arm_common_tables.h</in>
+                <in>arm_math.h</in>
+                <in>core_cm3.h</in>
+                <in>core_cmFunc.h</in>
+                <in>core_cmInstr.h</in>
+              </df>
+            </df>
+            <df name="SPARK_Firmware_Driver">
+              <df name="inc">
+                <in>cc3000_spi.h</in>
+                <in>hw_config.h</in>
+                <in>platform_config.h</in>
+                <in>spi.h</in>
+                <in>spi_bus.h</in>
+                <in>sst25vf_spi.h</in>
+                <in>stm32_it.h</in>
+                <in>stm32f10x_conf.h</in>
+                <in>usb_conf.h</in>
+                <in>usb_desc.h</in>
+                <in>usb_istr.h</in>
+                <in>usb_prop.h</in>
+                <in>usb_pwr.h</in>
+              </df>
+              <df name="src">
+                <in>cc3000_spi.c</in>
+                <in>hw_config.c</in>
+                <in>spi_bus.c</in>
+                <in>sst25vf_spi.c</in>
+                <in>stm32_it.c</in>
+                <in>system_stm32f10x.c</in>
+                <in>usb_desc.c</in>
+                <in>usb_endp.c</in>
+                <in>usb_istr.c</in>
+                <in>usb_prop.c</in>
+                <in>usb_pwr.c</in>
+              </df>
+            </df>
+            <df name="STM32_StdPeriph_Driver">
+              <df name="inc">
+                <in>misc.h</in>
+                <in>stm32f10x_adc.h</in>
+                <in>stm32f10x_bkp.h</in>
+                <in>stm32f10x_can.h</in>
+                <in>stm32f10x_cec.h</in>
+                <in>stm32f10x_crc.h</in>
+                <in>stm32f10x_dac.h</in>
+                <in>stm32f10x_dbgmcu.h</in>
+                <in>stm32f10x_dma.h</in>
+                <in>stm32f10x_exti.h</in>
+                <in>stm32f10x_flash.h</in>
+                <in>stm32f10x_fsmc.h</in>
+                <in>stm32f10x_gpio.h</in>
+                <in>stm32f10x_i2c.h</in>
+                <in>stm32f10x_iwdg.h</in>
+                <in>stm32f10x_pwr.h</in>
+                <in>stm32f10x_rcc.h</in>
+                <in>stm32f10x_rtc.h</in>
+                <in>stm32f10x_sdio.h</in>
+                <in>stm32f10x_spi.h</in>
+                <in>stm32f10x_tim.h</in>
+                <in>stm32f10x_usart.h</in>
+                <in>stm32f10x_wwdg.h</in>
+              </df>
+              <df name="src">
+                <in>misc.c</in>
+                <in>stm32f10x_adc.c</in>
+                <in>stm32f10x_bkp.c</in>
+                <in>stm32f10x_can.c</in>
+                <in>stm32f10x_cec.c</in>
+                <in>stm32f10x_crc.c</in>
+                <in>stm32f10x_dac.c</in>
+                <in>stm32f10x_dbgmcu.c</in>
+                <in>stm32f10x_dma.c</in>
+                <in>stm32f10x_exti.c</in>
+                <in>stm32f10x_flash.c</in>
+                <in>stm32f10x_fsmc.c</in>
+                <in>stm32f10x_gpio.c</in>
+                <in>stm32f10x_i2c.c</in>
+                <in>stm32f10x_iwdg.c</in>
+                <in>stm32f10x_pwr.c</in>
+                <in>stm32f10x_rcc.c</in>
+                <in>stm32f10x_rtc.c</in>
+                <in>stm32f10x_sdio.c</in>
+                <in>stm32f10x_spi.c</in>
+                <in>stm32f10x_tim.c</in>
+                <in>stm32f10x_usart.c</in>
+                <in>stm32f10x_wwdg.c</in>
+              </df>
+            </df>
+            <df name="STM32_USB_Device_Driver">
+              <df name="inc">
+                <in>usb_core.h</in>
+                <in>usb_def.h</in>
+                <in>usb_init.h</in>
+                <in>usb_int.h</in>
+                <in>usb_lib.h</in>
+                <in>usb_mem.h</in>
+                <in>usb_regs.h</in>
+                <in>usb_sil.h</in>
+                <in>usb_type.h</in>
+              </df>
+              <df name="src">
+                <in>usb_core.c</in>
+                <in>usb_init.c</in>
+                <in>usb_int.c</in>
+                <in>usb_mem.c</in>
+                <in>usb_regs.c</in>
+                <in>usb_sil.c</in>
+              </df>
+            </df>
+          </df>
+          <df name="STM32F2xx">
+            <df name="CMSIS">
+              <df name="Device">
+                <df name="ST">
+                  <df name="Include">
+                    <in>stm32f2xx.h</in>
+                    <in>system_stm32f2xx.h</in>
+                  </df>
+                </df>
+              </df>
+              <df name="Include">
+                <in>arm_common_tables.h</in>
+                <in>arm_math.h</in>
+                <in>core_cm0.h</in>
+                <in>core_cm3.h</in>
+                <in>core_cm4.h</in>
+                <in>core_cm4_simd.h</in>
+                <in>core_cmFunc.h</in>
+                <in>core_cmInstr.h</in>
+              </df>
+            </df>
+            <df name="SPARK_Firmware_Driver">
+              <df name="inc">
+                <in>hw_config.h</in>
+                <in>platform_config.h</in>
+                <in>stm32_it.h</in>
+                <in>stm32f2xx_conf.h</in>
+              </df>
+              <df name="src">
+                <in>hw_config.c</in>
+                <in>startup_stm32f2xx.s</in>
+                <in>stm32_it.c</in>
+                <in>system_stm32f2xx.c</in>
+              </df>
+            </df>
+            <df name="STM32_StdPeriph_Driver">
+              <df name="inc">
+                <in>misc.h</in>
+                <in>stm32f2xx_adc.h</in>
+                <in>stm32f2xx_can.h</in>
+                <in>stm32f2xx_crc.h</in>
+                <in>stm32f2xx_cryp.h</in>
+                <in>stm32f2xx_dac.h</in>
+                <in>stm32f2xx_dbgmcu.h</in>
+                <in>stm32f2xx_dcmi.h</in>
+                <in>stm32f2xx_dma.h</in>
+                <in>stm32f2xx_exti.h</in>
+                <in>stm32f2xx_flash.h</in>
+                <in>stm32f2xx_fsmc.h</in>
+                <in>stm32f2xx_gpio.h</in>
+                <in>stm32f2xx_hash.h</in>
+                <in>stm32f2xx_i2c.h</in>
+                <in>stm32f2xx_iwdg.h</in>
+                <in>stm32f2xx_pwr.h</in>
+                <in>stm32f2xx_rcc.h</in>
+                <in>stm32f2xx_rng.h</in>
+                <in>stm32f2xx_rtc.h</in>
+                <in>stm32f2xx_sdio.h</in>
+                <in>stm32f2xx_spi.h</in>
+                <in>stm32f2xx_syscfg.h</in>
+                <in>stm32f2xx_tim.h</in>
+                <in>stm32f2xx_usart.h</in>
+                <in>stm32f2xx_wwdg.h</in>
+              </df>
+              <df name="src">
+                <in>misc.c</in>
+                <in>stm32f2xx_adc.c</in>
+                <in>stm32f2xx_can.c</in>
+                <in>stm32f2xx_crc.c</in>
+                <in>stm32f2xx_cryp.c</in>
+                <in>stm32f2xx_cryp_aes.c</in>
+                <in>stm32f2xx_cryp_des.c</in>
+                <in>stm32f2xx_cryp_tdes.c</in>
+                <in>stm32f2xx_dac.c</in>
+                <in>stm32f2xx_dbgmcu.c</in>
+                <in>stm32f2xx_dcmi.c</in>
+                <in>stm32f2xx_dma.c</in>
+                <in>stm32f2xx_exti.c</in>
+                <in>stm32f2xx_flash.c</in>
+                <in>stm32f2xx_fsmc.c</in>
+                <in>stm32f2xx_gpio.c</in>
+                <in>stm32f2xx_hash.c</in>
+                <in>stm32f2xx_hash_md5.c</in>
+                <in>stm32f2xx_hash_sha1.c</in>
+                <in>stm32f2xx_i2c.c</in>
+                <in>stm32f2xx_iwdg.c</in>
+                <in>stm32f2xx_pwr.c</in>
+                <in>stm32f2xx_rcc.c</in>
+                <in>stm32f2xx_rng.c</in>
+                <in>stm32f2xx_rtc.c</in>
+                <in>stm32f2xx_sdio.c</in>
+                <in>stm32f2xx_spi.c</in>
+                <in>stm32f2xx_syscfg.c</in>
+                <in>stm32f2xx_tim.c</in>
+                <in>stm32f2xx_usart.c</in>
+                <in>stm32f2xx_wwdg.c</in>
+              </df>
+            </df>
+            <df name="STM32_USB_Device_Driver">
+              <df name="Class">
+                <df name="audio">
+                  <df name="inc">
+                    <in>usbd_audio_core.h</in>
+                    <in>usbd_audio_out_if.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbd_audio_core.c</in>
+                    <in>usbd_audio_out_if.c</in>
+                  </df>
+                </df>
+                <df name="cdc">
+                  <df name="inc">
+                    <in>usbd_cdc_core.h</in>
+                    <in>usbd_cdc_if_template.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbd_cdc_core.c</in>
+                    <in>usbd_cdc_if_template.c</in>
+                  </df>
+                </df>
+                <df name="dfu">
+                  <df name="inc">
+                    <in>usbd_dfu_core.h</in>
+                    <in>usbd_dfu_mal.h</in>
+                    <in>usbd_flash_if.h</in>
+                    <in>usbd_mem_if_template.h</in>
+                    <in>usbd_otp_if.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbd_dfu_core.c</in>
+                    <in>usbd_dfu_mal.c</in>
+                    <in>usbd_flash_if.c</in>
+                    <in>usbd_mem_if_template.c</in>
+                    <in>usbd_otp_if.c</in>
+                  </df>
+                </df>
+                <df name="hid">
+                  <df name="inc">
+                    <in>usbd_hid_core.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbd_hid_core.c</in>
+                  </df>
+                </df>
+                <df name="msc">
+                  <df name="inc">
+                    <in>usbd_msc_bot.h</in>
+                    <in>usbd_msc_core.h</in>
+                    <in>usbd_msc_data.h</in>
+                    <in>usbd_msc_mem.h</in>
+                    <in>usbd_msc_scsi.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbd_msc_bot.c</in>
+                    <in>usbd_msc_core.c</in>
+                    <in>usbd_msc_data.c</in>
+                    <in>usbd_msc_scsi.c</in>
+                    <in>usbd_storage_template.c</in>
+                  </df>
+                </df>
+              </df>
+              <df name="Core">
+                <df name="inc">
+                  <in>usbd_conf_template.h</in>
+                  <in>usbd_core.h</in>
+                  <in>usbd_def.h</in>
+                  <in>usbd_ioreq.h</in>
+                  <in>usbd_req.h</in>
+                  <in>usbd_usr.h</in>
+                </df>
+                <df name="src">
+                  <in>usbd_core.c</in>
+                  <in>usbd_ioreq.c</in>
+                  <in>usbd_req.c</in>
+                </df>
+              </df>
+              <df name="inc">
+                <in>usbd_audio_core.h</in>
+                <in>usbd_audio_out_if.h</in>
+                <in>usbd_cdc_core.h</in>
+                <in>usbd_cdc_if_template.h</in>
+                <in>usbd_conf_template.h</in>
+                <in>usbd_core.h</in>
+                <in>usbd_def.h</in>
+                <in>usbd_dfu_core.h</in>
+                <in>usbd_dfu_mal.h</in>
+                <in>usbd_flash_if.h</in>
+                <in>usbd_hid_core.h</in>
+                <in>usbd_ioreq.h</in>
+                <in>usbd_mem_if_template.h</in>
+                <in>usbd_msc_bot.h</in>
+                <in>usbd_msc_core.h</in>
+                <in>usbd_msc_data.h</in>
+                <in>usbd_msc_mem.h</in>
+                <in>usbd_msc_scsi.h</in>
+                <in>usbd_otp_if.h</in>
+                <in>usbd_req.h</in>
+                <in>usbd_usr.h</in>
+              </df>
+              <df name="src">
+                <in>usbd_audio_core.c</in>
+                <in>usbd_audio_out_if.c</in>
+                <in>usbd_cdc_core.c</in>
+                <in>usbd_cdc_if_template.c</in>
+                <in>usbd_core.c</in>
+                <in>usbd_dfu_core.c</in>
+                <in>usbd_dfu_mal.c</in>
+                <in>usbd_flash_if.c</in>
+                <in>usbd_hid_core.c</in>
+                <in>usbd_ioreq.c</in>
+                <in>usbd_mem_if_template.c</in>
+                <in>usbd_msc_bot.c</in>
+                <in>usbd_msc_core.c</in>
+                <in>usbd_msc_data.c</in>
+                <in>usbd_msc_scsi.c</in>
+                <in>usbd_otp_if.c</in>
+                <in>usbd_req.c</in>
+                <in>usbd_storage_template.c</in>
+              </df>
+            </df>
+            <df name="STM32_USB_Host_Driver">
+              <df name="Class">
+                <df name="HID">
+                  <df name="inc">
+                    <in>usbh_hid_core.h</in>
+                    <in>usbh_hid_keybd.h</in>
+                    <in>usbh_hid_mouse.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbh_hid_core.c</in>
+                    <in>usbh_hid_keybd.c</in>
+                    <in>usbh_hid_mouse.c</in>
+                  </df>
+                </df>
+                <df name="MSC">
+                  <df name="inc">
+                    <in>usbh_msc_bot.h</in>
+                    <in>usbh_msc_core.h</in>
+                    <in>usbh_msc_scsi.h</in>
+                  </df>
+                  <df name="src">
+                    <in>usbh_msc_bot.c</in>
+                    <in>usbh_msc_core.c</in>
+                    <in>usbh_msc_fatfs.c</in>
+                    <in>usbh_msc_scsi.c</in>
+                  </df>
+                </df>
+              </df>
+              <df name="Core">
+                <df name="inc">
+                  <in>usbh_conf_template.h</in>
+                  <in>usbh_core.h</in>
+                  <in>usbh_def.h</in>
+                  <in>usbh_hcs.h</in>
+                  <in>usbh_ioreq.h</in>
+                  <in>usbh_stdreq.h</in>
+                </df>
+                <df name="src">
+                  <in>usbh_core.c</in>
+                  <in>usbh_hcs.c</in>
+                  <in>usbh_ioreq.c</in>
+                  <in>usbh_stdreq.c</in>
+                </df>
+              </df>
+              <df name="inc">
+                <in>usbh_conf_template.h</in>
+                <in>usbh_core.h</in>
+                <in>usbh_def.h</in>
+                <in>usbh_hcs.h</in>
+                <in>usbh_hid_core.h</in>
+                <in>usbh_hid_keybd.h</in>
+                <in>usbh_hid_mouse.h</in>
+                <in>usbh_ioreq.h</in>
+                <in>usbh_msc_bot.h</in>
+                <in>usbh_msc_core.h</in>
+                <in>usbh_msc_scsi.h</in>
+                <in>usbh_stdreq.h</in>
+              </df>
+              <df name="src">
+                <in>usbh_core.c</in>
+                <in>usbh_hcs.c</in>
+                <in>usbh_hid_core.c</in>
+                <in>usbh_hid_keybd.c</in>
+                <in>usbh_hid_mouse.c</in>
+                <in>usbh_ioreq.c</in>
+                <in>usbh_msc_bot.c</in>
+                <in>usbh_msc_core.c</in>
+                <in>usbh_msc_fatfs.c</in>
+                <in>usbh_msc_scsi.c</in>
+                <in>usbh_stdreq.c</in>
+              </df>
+            </df>
+            <df name="STM32_USB_OTG_Driver">
+              <df name="inc">
+                <in>usb_bsp.h</in>
+                <in>usb_conf_template.h</in>
+                <in>usb_core.h</in>
+                <in>usb_dcd.h</in>
+                <in>usb_dcd_int.h</in>
+                <in>usb_defines.h</in>
+                <in>usb_hcd.h</in>
+                <in>usb_hcd_int.h</in>
+                <in>usb_otg.h</in>
+                <in>usb_regs.h</in>
+              </df>
+              <df name="src">
+                <in>usb_bsp_template.c</in>
+                <in>usb_core.c</in>
+                <in>usb_dcd.c</in>
+                <in>usb_dcd_int.c</in>
+                <in>usb_hcd.c</in>
+                <in>usb_hcd_int.c</in>
+                <in>usb_otg.c</in>
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="NET">
+          <df name="CC3000">
+            <df name="CC3000_Host_Driver">
+              <in>cc3000_common.c</in>
+              <in>cc3000_common.h</in>
+              <in>data_types.h</in>
+              <in>evnt_handler.c</in>
+              <in>evnt_handler.h</in>
+              <in>hci.c</in>
+              <in>hci.h</in>
+              <in>host_driver_version.h</in>
+              <in>netapp.c</in>
+              <in>netapp.h</in>
+              <in>nvmem.c</in>
+              <in>nvmem.h</in>
+              <in>security.c</in>
+              <in>security.h</in>
+              <in>socket.c</in>
+              <in>socket.h</in>
+              <in>wlan.c</in>
+              <in>wlan.h</in>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="services">
+        <df name="inc">
+          <in>config.h</in>
+          <in>debug.h</in>
+          <in>panic.h</in>
+          <in>panic_codes.h</in>
+          <in>rgbled.h</in>
+          <in>spark_macros.h</in>
+        </df>
+        <df name="src">
+          <in>debug.c</in>
+          <in>panic.c</in>
+          <in>rgbled.c</in>
+        </df>
+      </df>
+      <df name="wiring">
+        <df name="inc">
+          <in>spark_disable_cloud.h</in>
+          <in>spark_disable_wlan.h</in>
+          <in>spark_flasher_ymodem.h</in>
+          <in>spark_utilities.h</in>
+          <in>spark_wiring.h</in>
+          <in>spark_wiring_character.h</in>
+          <in>spark_wiring_client.h</in>
+          <in>spark_wiring_constants.h</in>
+          <in>spark_wiring_eeprom.h</in>
+          <in>spark_wiring_i2c.h</in>
+          <in>spark_wiring_interrupts.h</in>
+          <in>spark_wiring_ipaddress.h</in>
+          <in>spark_wiring_network.h</in>
+          <in>spark_wiring_print.h</in>
+          <in>spark_wiring_printable.h</in>
+          <in>spark_wiring_random.h</in>
+          <in>spark_wiring_servo.h</in>
+          <in>spark_wiring_spi.h</in>
+          <in>spark_wiring_stream.h</in>
+          <in>spark_wiring_string.h</in>
+          <in>spark_wiring_tcpclient.h</in>
+          <in>spark_wiring_tcpserver.h</in>
+          <in>spark_wiring_time.h</in>
+          <in>spark_wiring_tone.h</in>
+          <in>spark_wiring_udp.h</in>
+          <in>spark_wiring_usartserial.h</in>
+          <in>spark_wiring_usbkeyboard.h</in>
+          <in>spark_wiring_usbmouse.h</in>
+          <in>spark_wiring_usbserial.h</in>
+          <in>spark_wiring_wifi.h</in>
+          <in>spark_wlan.h</in>
+          <in>wifi_credentials_reader.h</in>
+        </df>
+        <df name="src">
+          <in>spark_flasher_ymodem.cpp</in>
+          <in>spark_utilities.cpp</in>
+          <in>spark_wiring.cpp</in>
+          <in>spark_wiring_eeprom.cpp</in>
+          <in>spark_wiring_i2c.cpp</in>
+          <in>spark_wiring_interrupts.cpp</in>
+          <in>spark_wiring_ipaddress.cpp</in>
+          <in>spark_wiring_print.cpp</in>
+          <in>spark_wiring_random.cpp</in>
+          <in>spark_wiring_servo.cpp</in>
+          <in>spark_wiring_spi.cpp</in>
+          <in>spark_wiring_stream.cpp</in>
+          <in>spark_wiring_string.cpp</in>
+          <in>spark_wiring_tcpclient.cpp</in>
+          <in>spark_wiring_tcpserver.cpp</in>
+          <in>spark_wiring_time.cpp</in>
+          <in>spark_wiring_tone.cpp</in>
+          <in>spark_wiring_udp.cpp</in>
+          <in>spark_wiring_usartserial.cpp</in>
+          <in>spark_wiring_usbkeyboard.cpp</in>
+          <in>spark_wiring_usbmouse.cpp</in>
+          <in>spark_wiring_usbserial.cpp</in>
+          <in>spark_wiring_wifi.cpp</in>
+          <in>spark_wlan.cpp</in>
+          <in>wifi_credentials_reader.cpp</in>
+        </df>
+      </df>
+    </df>
+    <df root="." name="1">
+      <df name="appnotes">
+      </df>
+      <df name="bootloader">
+        <df name="src">
+          <df name="core-v1">
+          </df>
+          <df name="core-v2">
+          </df>
+        </df>
+        <df name="tools">
+        </df>
+      </df>
+      <df name="build">
+        <df name="arm">
+          <df name="linker">
+          </df>
+          <df name="startup">
+          </df>
+        </df>
+        <df name="target">
+          <df name="bootloader">
+            <df name="prod-0">
+              <df name="src">
+                <df name="core-v1">
+                </df>
+              </df>
+              <df name="startup">
+              </df>
+            </df>
+          </df>
+          <df name="communication">
+            <df name="arm">
+              <df name="lib">
+                <df name="tropicssl">
+                  <df name="library">
+                  </df>
+                </df>
+              </df>
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="hal">
+            <df name="prod-0">
+              <df name="src">
+                <df name="core-v1">
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="main">
+            <df name="prod-0">
+              <df name="applications">
+                <df name="brewpi">
+                  <df name="Adafruit_ILI9341">
+                  </df>
+                  <df name="Adafruit_mfGFX">
+                  </df>
+                  <df name="BrewPiTouch">
+                  </df>
+                  <df name="Display">
+                  </df>
+                  <df name="DS2408">
+                  </df>
+                  <df name="DS2413">
+                  </df>
+                  <df name="DS2482">
+                  </df>
+                  <df name="LowPassFilter">
+                  </df>
+                  <df name="OneWire">
+                  </df>
+                  <df name="OneWireSlave">
+                  </df>
+                  <df name="OneWireSwitch">
+                  </df>
+                  <df name="ScrollBox">
+                  </df>
+                </df>
+              </df>
+              <df name="src">
+              </df>
+              <df name="startup">
+              </df>
+            </df>
+          </df>
+          <df name="platform">
+            <df name="prod-0">
+              <df name="MCU">
+                <df name="STM32F1xx">
+                  <df name="SPARK_Firmware_Driver">
+                    <df name="src">
+                    </df>
+                  </df>
+                  <df name="STM32_StdPeriph_Driver">
+                    <df name="src">
+                    </df>
+                  </df>
+                  <df name="STM32_USB_Device_Driver">
+                    <df name="src">
+                    </df>
+                  </df>
+                </df>
+              </df>
+              <df name="NET">
+                <df name="CC3000">
+                  <df name="CC3000_Host_Driver">
+                  </df>
+                </df>
+              </df>
+            </df>
+          </df>
+          <df name="services">
+            <df name="arm">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="wiring">
+            <df name="arm">
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="ci">
+        <df name="firmware">
+        </df>
+        <df name="unitth">
+        </df>
+      </df>
+      <df name="communication">
+        <df name="lib">
+          <df name="tropicssl">
+            <df name="include">
+              <df name="tropicssl">
+              </df>
+            </df>
+            <df name="library">
+            </df>
+          </df>
+        </df>
+        <df name="src">
+        </df>
+        <df name="tests">
+          <df name="UnitTest++">
+            <df name="src">
+              <df name="Posix">
+              </df>
+              <df name="Win32">
+              </df>
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="hal">
+        <df name="inc">
+        </df>
+        <df name="shared">
+        </df>
+        <df name="src">
+          <df name="core-v1">
+          </df>
+          <df name="gcc">
+          </df>
+          <df name="template">
+          </df>
+        </df>
+      </df>
+      <df name="main">
+        <df name="applications">
+          <df name="brewpi">
+            <df name="Adafruit_ILI9341">
+            </df>
+            <df name="Adafruit_mfGFX">
+            </df>
+            <df name="BrewPiTouch">
+            </df>
+            <df name="Display">
+            </df>
+            <df name="DS2408">
+            </df>
+            <df name="DS2413">
+            </df>
+            <df name="DS2482">
+            </df>
+            <df name="LowPassFilter">
+            </df>
+            <df name="OneWire">
+            </df>
+            <df name="OneWireSwitch">
+            </df>
+            <df name="ScrollBox">
+            </df>
+          </df>
+          <df name="tinker">
+          </df>
+        </df>
+        <df name="inc">
+        </df>
+        <df name="libraries">
+          <df name="Serial2">
+          </df>
+          <df name="Ymodem">
+          </df>
+        </df>
+        <df name="src">
+        </df>
+        <df name="tests">
+          <df name="core-v1">
+            <df name="testapp1">
+            </df>
+          </df>
+          <df name="core-v1-fixture1">
+            <df name="testapp2">
+            </df>
+          </df>
+          <df name="libraries">
+            <df name="unit-test">
+            </df>
+          </df>
+          <df name="reflection">
+          </df>
+          <df name="unit">
+          </df>
+        </df>
+      </df>
+      <df name="platform">
+        <df name="MCU">
+          <df name="STM32F1xx">
+            <df name="CMSIS">
+              <df name="Device">
+                <df name="ST">
+                  <df name="Include">
+                  </df>
+                </df>
+              </df>
+              <df name="Include">
+              </df>
+            </df>
+            <df name="SPARK_Firmware_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+            <df name="STM32_StdPeriph_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+            <df name="STM32_USB_Device_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+          </df>
+          <df name="STM32F2xx">
+            <df name="CMSIS">
+              <df name="Device">
+                <df name="ST">
+                  <df name="Include">
+                  </df>
+                </df>
+              </df>
+              <df name="Include">
+              </df>
+            </df>
+            <df name="SPARK_Firmware_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+            <df name="STM32_StdPeriph_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+            <df name="STM32_USB_Device_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+            <df name="STM32_USB_Host_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+            <df name="STM32_USB_OTG_Driver">
+              <df name="inc">
+              </df>
+              <df name="src">
+              </df>
+            </df>
+          </df>
+        </df>
+        <df name="NET">
+          <df name="CC3000">
+            <df name="CC3000_Host_Driver">
+            </df>
+          </df>
+        </df>
+      </df>
+      <df name="services">
+        <df name="inc">
+        </df>
+        <df name="src">
+        </df>
+      </df>
+      <df name="wiring">
+        <df name="inc">
+        </df>
+        <df name="src">
+        </df>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+            <option name="gdb_init_file" value="C:\repos\gdbdebug.txt"/>
+            <option name="gdb_source_dirs" value="C:\repos\spark-firmware\"/>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>arm-none-eabi-gdb blink.elf -x C:\repos\spark-firmware\build\.gdbinit</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb blink.elf -x ./.gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb blink.elf -x .gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb blink.elf -x ../../../.gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb blink.elf -x /.gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb blink.elf -x C:\repos\spark-firmware\build\.gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb brewpi.elf -x C:\repos\spark-firmware\build\.gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb main.elf -x C:\repos\spark-firmware\build\.gdbprogram</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb main.elf -x C:\repos\</runcommandpicklistitem>
+          <runcommandpicklistitem>arm-none-eabi-gdb main.elf -x C:\repos\gdbprogram.txt</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>arm-none-eabi-gdb main.elf -x C:\repos\gdbprogram.txt</runcommand>
+        <rundir>C:\repos\spark-firmware\build\target\main\prod-0\applications\brewpi</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+    <conf name="gdb" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>3</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir></rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
