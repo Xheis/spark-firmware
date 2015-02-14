@@ -28,6 +28,7 @@
 #define __SPARK_UTILITIES_H
 
 #include "rtc_hal.h"
+#include "socket_hal.h"
 #include "spark_wiring_string.h"
 #include "spark_wiring_time.h"
 #include "spark_wiring_interrupts.h"
@@ -57,12 +58,12 @@
 
 typedef enum
 {
-  AUTOMATIC = 0, SEMI_AUTOMATIC = 1, MANUAL = 2
+    AUTOMATIC = 0, SEMI_AUTOMATIC = 1, MANUAL = 2
 } System_Mode_TypeDef;
 
 typedef enum
 {
-	SLEEP_MODE_WLAN = 0, SLEEP_MODE_DEEP = 1
+    SLEEP_MODE_WLAN = 0, SLEEP_MODE_DEEP = 1
 } Spark_Sleep_TypeDef;
 
 typedef enum
@@ -158,7 +159,7 @@ int Internet_Test(void);
 
 int Spark_Connect(void);
 int Spark_Disconnect(void);
-
+bool Spark_IsSparkSocket(sock_handle_t socket);
 void Spark_Protocol_Init(void);
 int Spark_Handshake(void);
 bool Spark_Communication_Loop(void);
