@@ -128,7 +128,6 @@ System_Mode_TypeDef SystemClass::mode(void)
 bool SystemClass::serialSaveFile(Stream *serialObj, uint32_t sFlashAddress)
 {
   bool status = false;
-
   if(NULL != Ymodem_Serial_Flash_Update)
   {
     status = Ymodem_Serial_Flash_Update(serialObj, sFlashAddress);
@@ -281,7 +280,7 @@ void SparkClass::function(const char *funcKey, int (*pFunc)(String paramString))
 bool SparkClass::publish(const char *eventName)
 {
 #ifndef SPARK_NO_CLOUD    
-    return spark_protocol.send_event(eventName, NULL, 60, EventType::PUBLIC);
+  return spark_protocol.send_event(eventName, NULL, 60, EventType::PUBLIC);
 #else
     return false;
 #endif    
@@ -344,7 +343,7 @@ void SparkClass::unsubscribe()
 bool SparkClass::subscribe(const char *eventName, EventHandler handler)
 {
 #ifndef SPARK_NO_CLOUD
-  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::FIREHOSE, NULL);  
+  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::FIREHOSE, NULL);
   if (success && connected())
   {
     success = spark_protocol.send_subscription(eventName, SubscriptionScope::FIREHOSE);
@@ -358,8 +357,8 @@ bool SparkClass::subscribe(const char *eventName, EventHandler handler)
 bool SparkClass::subscribe(const char *eventName, EventHandler handler, Spark_Subscription_Scope_TypeDef scope)
 {
 #ifndef SPARK_NO_CLOUD    
-    bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, NULL);
-    if (success && connected())
+  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, NULL);
+  if (success && connected())
   {
     success = spark_protocol.send_subscription(eventName, SubscriptionScope::MY_DEVICES);
   }
@@ -372,8 +371,8 @@ bool SparkClass::subscribe(const char *eventName, EventHandler handler, Spark_Su
 bool SparkClass::subscribe(const char *eventName, EventHandler handler, const char *deviceID)
 {
 #ifndef SPARK_NO_CLOUD    
-    bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, deviceID);
-  if (success)
+  bool success = spark_protocol.add_event_handler(eventName, handler, SubscriptionScope::MY_DEVICES, deviceID);
+    if (success && connected())
   {
     success = spark_protocol.send_subscription(eventName, deviceID);
   }
@@ -980,6 +979,10 @@ int userFuncSchedule(const char *funcKey, const char *paramString)
 }
 
 bool Spark_IsSparkSocket(sock_handle_t socket) { return socket==sparkSocket; }
+bool Spark_IsSparkSocket(sock_handle_t socket) 
+{
+   return socket==sparkSocket;   
+}
 
 
 #else

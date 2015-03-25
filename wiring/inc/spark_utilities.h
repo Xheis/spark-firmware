@@ -85,17 +85,17 @@ class Stream;
 
 class SystemClass {
 private:
-  static System_Mode_TypeDef _mode;
+    static System_Mode_TypeDef _mode;
 
 public:
-  SystemClass();
-  SystemClass(System_Mode_TypeDef mode);
-  static System_Mode_TypeDef mode(void);
-  static bool serialSaveFile(Stream *serialObj, uint32_t sFlashAddress);
-  static bool serialFirmwareUpdate(Stream *serialObj);
-  static void factoryReset(void);
-  static void bootloader(void);
-  static void reset(void);
+    SystemClass();
+    SystemClass(System_Mode_TypeDef mode);
+    static System_Mode_TypeDef mode(void);
+    static bool serialSaveFile(Stream *serialObj, uint32_t sFlashAddress);
+    static bool serialFirmwareUpdate(Stream *serialObj);
+    static void factoryReset(void);
+    static void bootloader(void);
+    static void reset(void);
 };
 
 class RGBClass {
