@@ -978,7 +978,6 @@ int userFuncSchedule(const char *funcKey, const char *paramString)
 	return -1;
 }
 
-bool Spark_IsSparkSocket(sock_handle_t socket) { return socket==sparkSocket; }
 bool Spark_IsSparkSocket(sock_handle_t socket) 
 {
    return socket==sparkSocket;   
