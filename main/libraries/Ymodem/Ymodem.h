@@ -56,7 +56,7 @@
 #define ABORT1                  (0x41)  /* 'A' == 0x41, abort by user */
 #define ABORT2                  (0x61)  /* 'a' == 0x61, abort by user */
 
-#define NAK_TIMEOUT             (0x100000)
+#define NAK_TIMEOUT             (0x10000000)
 #define MAX_ERRORS              (5)
 
 /* Constants used by Serial Command Line Mode */
@@ -129,12 +129,12 @@ static uint32_t Send_Byte(Stream *serialObj, uint8_t c)
 
 /**
  * @brief  Receive a packet from sender
- * @param  data
+ * @param  data     
  * @param  length
- * @param  timeout
  *     0: end of transmission
  *    -1: abort by sender
  *    >0: packet length
+ * @param  timeout
  * @retval 0: normally return
  *        -1: timeout or packet error
  *         1: abort by user
@@ -181,11 +181,7 @@ static int32_t Receive_Packet(Stream *serialObj, uint8_t *data, int32_t *length,
     {
       return -1;
     }
-  }
-  if (data[PACKET_SEQNO_INDEX] != ((data[PACKET_SEQNO_COMP_INDEX] ^ 0xff) & 0xff))
-  {
-    return -1;
-  }
+  } 
   *length = packet_size;
   return 0;
 }
@@ -202,9 +198,9 @@ static int32_t Ymodem_Receive(Stream *serialObj, uint32_t sFlashAddress, uint8_t
   uint32_t size = 0;
   uint16_t current_index = 0, saved_index = 0;
 
-  for (session_done = 0, errors = 0, session_begin = 0; ;)
+  for (session_done = 0, errors = 0, session_begin = 0; !session_done;)
   {
-    for (packets_received = 0, file_done = 0, buf_ptr = buf; ;)
+    for (packets_received = 0, file_done = 0, buf_ptr = buf; !file_done;)
     {
       switch (Receive_Packet(serialObj, packet_data, &packet_length, NAK_TIMEOUT))
       {
@@ -227,6 +223,10 @@ static int32_t Ymodem_Receive(Stream *serialObj, uint32_t sFlashAddress, uint8_t
               {
                 Send_Byte(serialObj, NAK);
               }
+              else if (packet_data[PACKET_SEQNO_INDEX] != ((packet_data[PACKET_SEQNO_COMP_INDEX] ^ 0xff) & 0xff))
+              {
+                Send_Byte(serialObj, NAK);
+              }              
               else
               {
                 if (packets_received == 0)
@@ -318,14 +318,6 @@ static int32_t Ymodem_Receive(Stream *serialObj, uint32_t sFlashAddress, uint8_t
           }          
           break;
       }
-      if (file_done != 0)
-      {
-        break;
-      }
-    }
-    if (session_done != 0)
-    {
-      break;
     }
   }
   return (int32_t)size;
